@@ -15,34 +15,43 @@ const getCompliment = () => {
 
 const getFortune = () => {
     
+    fortuneDiv.innerHTML = ''
 
-    axios.get("http://localhost:3000/api/fortune/")
-        .then(res => {
-            const data = res.data;
-            alert(data);
-    })
+    axios.get(`${baseURL}/fortune`)
+        .then((res) => {
+            console.log(res.data)
+
+            for(let i = 0; i < res.data.length; i++){
+                let newSpan = document.createElement('p')
+                newSpan.textContent = `${i + 1}. ${res.data[i]}`
+                fortuneDiv.appendChild(newSpan)
+                }
+            })
+        .catch((err) => {
+            console.log(err)
+        })
 }
 
-const addCompliments = () => {
+const addCompliment = () => {
 
-    complimentsDiv.innerHTML=''
+    complimentDiv.innerHTML=''
 
     let bodyObj = {
-        name: complimentsInput.value
+        name: complimentDisplay.value
     }
 
-    axios.post(`${baseURL}/dinos`, bodyObj)
+    axios.post(`${baseURL}/compliments`, bodyObj)
     .then((res) => {
         console.log(res.data)
 
         for(let i = 0; i < res.data.length; i++){
             let newSpan = document.createElement('p')
             newSpan.textContent = `${i + 1}. ${res.data[i]}`
-            complimentsDiv.appendChild(newSpan)
+            complimentDiv.appendChild(newSpan)
         }
     })
 }
 
 complimentBtn.addEventListener('click', getCompliment)
 fortuneBtn.addEventListener('click', getFortune)
-addCompliment.addEventListener('click', addCompliments)
+addCompliment.addEventListener('click', addCompliment)
