@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
   <head>
     <title>Back End Assessment</title>
   </head>
-  <body class="container">
+  <body>
 
     <h3>Press the button</h3>
 
     <button id="complimentButton">Get a compliment</button>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="main.js"></script>
+    <h3>Magic</h3>
 
-    <h3>Add a Fortune</h3>
-    <div id="fortunesDisplay"></div>
+    <button id="getFortune">Get Fortune</button>
 
-    <input type="text" id="newFortune" placeholder="Add Fortune">
+    <h3>Add Fortune</h3>
+    <input type="text" id="newFortune" placeholder="Enter Fortune">
     <button id="addButton">Add</button>
 
-    <h3>Delete a Fortune</h3>
-    <input type="text" id="fortunesId" placeholder="Enter Fortune to Delete">
-    <button id="deleteFortune">Delete</button>
-    
+    <h3>Delete A Fortune</h3>
+    <input type="text" id="fortuneId" placeholder="Enter Fortune Delete">
+    <button id="deleteButton">delete</button>
+
     <h3>The Fortunes of the Cookie</h3>
-    <div id="fortunesDisplay"></div>
+    <div id="FortuneDisplay"></div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
 
   </body>
 </html>

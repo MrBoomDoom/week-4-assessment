@@ -1,4 +1,4 @@
-let fortune = ["You will gain big brain", "You will have cool shoes", "You will love man, even if you are man", "Quit, dont quit... noodles", "Error 404: Fortune not found"];
+let fortuneArray = ["You will gain big brain", "You will have cool shoes", "You will love man, even if you are man", "Quit, dont quit... noodles", "Error 404: Fortune not found"];
 
 module.exports = {
     
@@ -22,9 +22,8 @@ module.exports = {
 
         console.log(name)
 
-        complimentArray.push(name)
+        fortuneArray.push(name)
 
-        res.status(200).send(randomCompliment)
+        res.status(200).send(fortuneArray)
     }
-
 }

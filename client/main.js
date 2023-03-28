@@ -1,10 +1,20 @@
+console.log("yee yee")
+
+let baseURL = 'http://localhost:3000'
+
 const complimentBtn = document.getElementById("complimentButton")
-const fortuneBtn = document.getElementById("fortuneButton")
-const addComplimentButton = document.querySelector('#addButton')
-const complimentInput = document.querySelector('#newCompliment')
+
+const getFortuneBtn = document.querySelector('#getFortune')
+const fortineDiv = document.querySelector('#fortuneDisplay')
+
+const addFortuneButton = document.querySelector('#addButton')
+const fortuneInput = document.querySelector('#newFortune')
+
+const deleteBtn = document.querySelector('#deleteButton')
+const deleteInput = document.querySelector('#fortuneID')
+
 
 const getCompliment = () => {
-    
 
     axios.get("http://localhost:3000/api/compliment/")
         .then(res => {
@@ -12,6 +22,10 @@ const getCompliment = () => {
             alert(data);
     })
 }
+
+
+
+
 
 const getFortune = () => {
     
@@ -32,7 +46,7 @@ const getFortune = () => {
         })
 }
 
-const addCompliment = () => {
+const addFortune = () => {
 
     complimentDiv.innerHTML=''
 
@@ -54,4 +68,7 @@ const addCompliment = () => {
 
 complimentBtn.addEventListener('click', getCompliment)
 fortuneBtn.addEventListener('click', getFortune)
-addCompliment.addEventListener('click', addCompliment)
+addFortuneBtn.addEventListener('click', addFortune)
+// deleteFortuneBtn.addEventListener('click', deleteFortune)
+
+getFortune()
