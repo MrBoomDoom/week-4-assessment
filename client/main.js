@@ -30,7 +30,7 @@ const getFortune = () => {
     
     fortuneDiv.innerHTML = ''
 
-    axios.get(`${baseURL}/fortune`)
+    axios.get(`${baseURL}/api/fortune`)
         .then((res) => {
             console.log(res.data)
 
@@ -53,7 +53,7 @@ const addFortune = () => {
         name: fortuneInput.value
     }
 
-    axios.post(`${baseURL}/fortune`, bodyObj)
+    axios.post(`${baseURL}/api/fortune`, bodyObj)
     .then((res) => {
         console.log(res.data)
 
@@ -63,13 +63,14 @@ const addFortune = () => {
             fortuneDiv.appendChild(newSpan)
         }
     })
+}
 
 const deleteFortune = () => {
     fortuneDiv.innerHTML=''
 
     let idToDelete = deleteInput.value
 
-    axios.delete(`${baseURL}/dinos/${idToDelete}`)
+    axios.delete(`${baseURL}/api/fortune${idToDelete}`)
             .then((res) => {
                 console.log(res.data)
     
@@ -83,7 +84,7 @@ const deleteFortune = () => {
                 console.log(err)
             })
         }
-}
+
 
 complimentBtn.addEventListener('click', getCompliment)
 getFortuneBtn.addEventListener('click', getFortune)
