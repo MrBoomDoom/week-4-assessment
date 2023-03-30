@@ -63,6 +63,26 @@ const addFortune = () => {
             fortuneDiv.appendChild(newSpan)
         }
     })
+
+const deleteFortune = () => {
+    fortuneDiv.innerHTML=''
+
+    let idToDelete = deleteInput.value
+
+    axios.delete(`${baseURL}/dinos/${idToDelete}`)
+            .then((res) => {
+                console.log(res.data)
+    
+                for(let i = 0; i < res.data.length; i++){
+                    let newSpan = document.createElement('p')
+                    newSpan.textContent = `${i + 1}. ${res.data[i]}`
+                    fortuneDiv.appendChild(newSpan)
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        }
 }
 
 complimentBtn.addEventListener('click', getCompliment)
