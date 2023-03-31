@@ -11,7 +11,7 @@ const addFortuneBtn = document.querySelector('#addButton')
 const fortuneInput = document.querySelector('#newFortune')
 
 const deleteBtn = document.querySelector('#deleteButton')
-const deleteInput = document.querySelector('#fortuneID')
+const deleteInput = document.querySelector('#fortuneId')
 
 
 const getCompliment = () => {
@@ -70,7 +70,7 @@ const deleteFortune = () => {
 
     let idToDelete = deleteInput.value
 
-    axios.delete(`${baseURL}/api/fortune${idToDelete}`)
+    axios.delete(`${baseURL}/api/fortune/${idToDelete}`)
             .then((res) => {
                 console.log(res.data)
     

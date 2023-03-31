@@ -12,7 +12,7 @@ const {getCompliment, getFortune, addFortune, deleteFortune} = require('./contro
 app.get("/api/compliment", getCompliment);
 app.get("/api/fortune", getFortune);
 app.post("/api/fortune", addFortune);
-app.post("/api/fortune/:id", deleteFortune);
+app.delete("/api/fortune/:id", deleteFortune);
 
 
 app.listen(3000, () => console.log("Love you 3000"));
